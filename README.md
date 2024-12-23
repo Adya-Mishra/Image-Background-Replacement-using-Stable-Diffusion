@@ -26,20 +26,20 @@ This project demonstrates object replacement in images using Stable Diffusion 3,
 
 Step 1: Install Required Libraries
 
-    ```bash
+    ```
     pip install diffusers transformers torch accelerate huggingface_hub
 
 Step 2: Hugging Face Login
 
 Get your Hugging Face token from Hugging Face Settings and log in:
 
-    ```python
+    ```
     from huggingface_hub import login
     login("Your_Hugging_Face_Token")  # Replace with your token
 
 Step 3: Import Libraries
 
-    ```python
+    ```
     import torch
     from diffusers import StableDiffusionPipeline, DiffusionPipeline, StableDiffusionInpaintPipeline
     from transformers import CLIPSegProcessor, CLIPSegForImageSegmentation
@@ -52,23 +52,24 @@ Step 3: Import Libraries
 
 1. Model Loading
    
-Three models are used:
-
-- def load_base_model(): Stable Diffusion Base Model for generating images. 
-- def load_inpaint_model(): Stable Diffusion Inpainting Model for object replacement.
-- def load_segment_model(): CLIPSeg Segmentation Model for automatic mask generation.
+   Three models are used:
+    
+    - def load_base_model(): Stable Diffusion Base Model for generating images. 
+    - def load_inpaint_model(): Stable Diffusion Inpainting Model for object replacement.
+    - def load_segment_model(): CLIPSeg Segmentation Model for automatic mask generation.
 
 2. Mask Generation
    
-def generate_mask(image, text_prompt, processor, model): Generates binary mask using CLIPSeg model.
+   def generate_mask(image, text_prompt, processor, model): Generates binary mask using CLIPSeg model.
 
 3. Object Replacement
    
-def replace_object(image_path, object_prompt, replacement_prompt, processor, seg_model, inpaint_pipe): Performs object replacement using the inpainting model and mask.
+   def replace_object(image_path, object_prompt, replacement_prompt, processor, seg_model, inpaint_pipe): Performs object 
+   replacement using the inpainting model and mask.
 
 4. Result Visualization
    
-def display_results(original, mask, result): Displays results side by side using Matplotlib.
+   def display_results(original, mask, result): Displays results side by side using Matplotlib.
 
 ## Example Usage
 
@@ -85,19 +86,19 @@ def display_results(original, mask, result): Displays results side by side using
 ## Full Pipeline
 
 1. Input Image
-Provide an image containing the object to be replaced.
+   Provide an image containing the object to be replaced.
 
 2. Mask Generation
-Generate a mask isolating the object described in the text prompt.
+   Generate a mask isolating the object described in the text prompt.
 
 3. Object Replacement
-Replace the object with a new one described in the replacement prompt.
+   Replace the object with a new one described in the replacement prompt.
 
 4. Blending and Post-Processing
-Use Poisson blending for seamless integration.
+   Use Poisson blending for seamless integration.
 
 5. Result Visualization
-Display side-by-side results for evaluation.
+   Display side-by-side results for evaluation.
 
 ## Acknowledgments
 
