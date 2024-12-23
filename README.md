@@ -26,20 +26,21 @@ This project demonstrates object replacement in images using Stable Diffusion 3,
 
 Step 1: Install Required Libraries
 
-    ```
+  ```
     pip install diffusers transformers torch accelerate huggingface_hub
-
+  ```
 Step 2: Hugging Face Login
 
 Get your Hugging Face token from Hugging Face Settings and log in:
 
-    ```
+  ```
     from huggingface_hub import login
     login("Your_Hugging_Face_Token")  # Replace with your token
+  ```
 
 Step 3: Import Libraries
 
-    ```
+  ```
     import torch
     from diffusers import StableDiffusionPipeline, DiffusionPipeline, StableDiffusionInpaintPipeline
     from transformers import CLIPSegProcessor, CLIPSegForImageSegmentation
@@ -47,6 +48,7 @@ Step 3: Import Libraries
     import numpy as np
     import cv2
     import matplotlib.pyplot as plt
+  ```
 
 ## How It Works
 
@@ -60,16 +62,16 @@ Step 3: Import Libraries
 
 2. Mask Generation
    
-   def generate_mask(image, text_prompt, processor, model): Generates binary mask using CLIPSeg model.
+    def generate_mask(image, text_prompt, processor, model): Generates binary mask using CLIPSeg model.
 
 3. Object Replacement
    
-   def replace_object(image_path, object_prompt, replacement_prompt, processor, seg_model, inpaint_pipe): Performs object 
-   replacement using the inpainting model and mask.
+    def replace_object(image_path, object_prompt, replacement_prompt, processor, seg_model, inpaint_pipe): Performs object 
+    replacement using the inpainting model and mask.
 
 4. Result Visualization
    
-   def display_results(original, mask, result): Displays results side by side using Matplotlib.
+    def display_results(original, mask, result): Displays results side by side using Matplotlib.
 
 ## Example Usage
 
@@ -102,9 +104,9 @@ Step 3: Import Libraries
 
 ## Acknowledgments
 
-- Stable Diffusion by Stability AI
-- CLIPSeg by CIDAS for segmentation
-- Hugging Face for model hosting and tools
+   - Stable Diffusion by Stability AI
+   - CLIPSeg by CIDAS for segmentation
+   - Hugging Face for model hosting and tools
   
 ## License
 
